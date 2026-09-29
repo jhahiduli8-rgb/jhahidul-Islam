@@ -1,243 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Life</title>
-    <style>
-        body {
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding-bottom: 70px;
-        }
-
-        .header {
-            background-color: #87CEEB;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #333;
-        }
-
-        .header h2 { margin: 0; }
-
-        .content {
-            padding: 15px;
-        }
-
-        .product-scroll {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            scrollbar-width: none;
-        }
-
-        .product-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .product-item {
-            flex: 0 0 auto;
-            width: 100px;
-            text-align: center;
-        }
-
-        .product-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            object-fit: cover;
-            background-color: #eee;
-        }
-
-        .product-item span {
-            display: block;
-            font-size: 11px;
-            color: #555;
-            margin-top: 5px;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .verify-card {
-            background-color: #e6f7ff;
-            border-radius: 30px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #bae7ff;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .grid-item {
-            text-align: center;
-        }
-
-        .icon-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 5px;
-            font-size: 24px;
-        }
-
-        .grid-item span {
-            display: block;
-            font-size: 12px;
-            color: #555;
-            font-weight: bold;
-        }
-
-        .bg-pink { background-color: #ffe4e1; }
-        .bg-yellow { background-color: #fffacd; }
-        .bg-green { background-color: #e0eee0; }
-        .bg-blue { background-color: #e0f6ff; }
-        .bg-purple { background-color: #e6e6fa; }
-        .bg-orange { background-color: #ffe4b5; }
-        .bg-teal { background-color: #e0eeee; }
-        .bg-lavender { background-color: #f5e6ff; }
-
-
-        .nav-bar {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            border-top: 1px solid #ddd;
-        }
-
-        .nav-item {
-            text-align: center;
-            font-size: 12px;
-            color: #555;
-            cursor: pointer;
-        }
-
-        .nav-item.active {
-            color: #87CEEB;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Earning App</title>
+<style>
+body {
+background-color: #87CEEB;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.header {
+width: 100%;
+max-width: 400px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+color: #fff;
+}
+.profile-card {
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 15px;
+padding: 15px;
+width: 100%;
+max-width: 400px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+.verify-btn {
+background-color: #FFA500;
+border: none;
+padding: 10px 20px;
+border-radius: 8px;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+}
+.section-title {
+width: 100%;
+max-width: 400px;
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 15px;
+color: #fff;
+}
+.grid-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+width: 100%;
+max-width: 400px;
+margin-bottom: 20px;
+}
+.grid-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+color: #333;
+}
+.icon-box {
+width: 50px;
+height: 50px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 8px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+font-size: 24px;
+}
+.btn-gradient-blue { background: linear-gradient(135deg, #FF99AA, #FFCCAA); }
+.btn-gradient-green { background: linear-gradient(135deg, #99FF99, #CCFF99); }
+.btn-gradient-yellow { background: linear-gradient(135deg, #FFFF99, #FFFFCC); }
+.btn-gradient-purple { background: linear-gradient(135deg, #CC99FF, #FFCCFF); }
+.btn-gradient-orange { background: linear-gradient(135deg, #FFCC99, #FF9966); }
+.btn-gradient-teal { background: linear-gradient(135deg, #99FFFF, #CCFFFF); }
+.btn-gradient-pink { background: linear-gradient(135deg, #FF99FF, #FF66FF); }
+</style>
 </head>
 <body>
-    <div class="header">
-        <div class="menu-icon">☰</div>
-        <h2>Easy Life</h2>
-        <div class="notif">🔔</div>
-    </div>
-
-    <div class="content">
-
-        <div class="product-scroll">
-            <div class="product-item">
-                <img src="https://via.placeholder.com/100" alt="Borka">
-                <span>Borka</span>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/100" alt="Chaina Ladies">
-                <span>Chaina Ladies</span>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/100" alt="Smart Bed">
-                <span>Smart Bed</span>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/100" alt="Fill Light">
-                <span>Fill Light</span>
-            </div>
-             <div class="product-item">
-                <img src="https://via.placeholder.com/100" alt="Watch">
-                <span>Watch</span>
-            </div>
-        </div>
-
-        <div class="verify-card">
-            <div>
-                <div class="section-title">Profile Verification</div>
-                <p>Verify your profile now.</p>
-            </div>
-            <button style="background-color: #87CEEB; border: none; padding: 10px 15px; border-radius: 8px; font-weight: bold;">Verify Account</button>
-        </div>
-
-        <div class="section-title">Easy Earning</div>
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="icon-circle bg-pink">📢</div>
-                <span>Ads</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-yellow">❓</div>
-                <span>Quiz</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-green">⌨️</div>
-                <span>Typing</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-blue">📈</div>
-                <span>Marketing</span>
-            </div>
-             <div class="grid-item">
-                <div class="icon-circle bg-purple">💼</div>
-                <span>Micro Job</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-orange">📝</div>
-                <span>Job Post</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-teal">📚</div>
-                <span>Courses</span>
-            </div>
-            <div class="grid-item">
-                 <div class="icon-circle bg-lavender">🌐</div>
-                <span>Digital Service</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="nav-bar">
-        <div class="nav-item active">
-            <span>Home</span>
-        </div>
-        <div class="nav-item">
-            <span>Reels</span>
-        </div>
-        <div class="nav-item">
-            <span>Reselling</span>
-        </div>
-        <div class="nav-item">
-            <span>Micro Job</span>
-        </div>
-        <div class="nav-item">
-            <span>Profile</span>
-        </div>
-    </div>
+<div class="header">
+<h2>☰ Easy Earning</h2>
+<span>🔔</span>
+</div>
+<div class="profile-card">
+<div>
+<p>Hi. Rdx Noyon</p>
+<p>Welcome</p>
+</div>
+<button class="verify-btn">Verify Account</button>
+</div>
+<div class="section-title">Easy Earning</div>
+<div class="grid-container">
+<div class="grid-item">
+<div class="icon-box btn-gradient-blue">Ads</div>
+<span>Ads</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-green">?</div>
+<span>Quiz</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-yellow">⌨</div>
+<span>Typing</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-purple">📊</div>
+<span>Marketing</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-orange">💼</div>
+<span>Micro Job</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-teal">📝</div>
+<span>Job Post</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-pink">📚</div>
+<span>Courses</span>
+</div>
+<div class="grid-item">
+<div class="icon-box btn-gradient-blue">🌐</div>
+<span>Digital Service</span>
+</div>
+</div>
 </body>
 </html>
+
