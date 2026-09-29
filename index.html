@@ -1,47 +1,101 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার মিনি অ্যাপ</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Giveaways</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: var(--tg-theme-bg-color, #ffffff); color: var(--tg-theme-text-color, #333333); }
-        button { background-color: var(--tg-theme-button-color, #2481cc); color: var(--tg-theme-button-text-color, #ffffff); border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; }
-        select { padding: 5px; font-size: 14px; margin-bottom: 20px; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .emoji {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .details h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+
+        .details p {
+            margin: 0;
+            color: #888888;
+            font-size: 14px;
+        }
+
+        .go-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <label for="langSelect">ভাষা নির্বাচন করুন: </label>
-    <select id="langSelect" onchange="changeLanguage()">
-        <option value="bn">বাংলা</option>
-        <option value="en">English</option>
-    </select>
+    <div class="header">🎁 Giveaways</div>
 
-    <h1 id="title">স্বাগতম!</h1>
-    <p id="description">এটি আপনার প্রথম টেলিগ্রাম মিনি অ্যাপ।</p>
-    <button id="mainButton" onclick="buttonAction()">কাজ শুরু করুন</button>
+    <div class="card">
+        <div class="card-info">
+            <div class="emoji">💎</div>
+            <div class="details">
+                <h3>TON Giveaway</h3>
+                <p>Get tickets and win!</p>
+            </div>
+        </div>
+        <button class="go-btn">Go</button>
+    </div>
 
-    <script>
-        const tg = window.Telegram.WebApp;
-        tg.ready();
+    <div class="card">
+        <div class="card-info">
+            <div class="emoji">🏆</div>
+            <div class="details">
+                <h3>Referral contest</h3>
+                <p>Invite your friends and win!</p>
+            </div>
+        </div>
+        <button class="go-btn">Go</button>
+    </div>
 
-        const translations = {
-            'bn': { title: 'স্বাগতম!', description: 'এটি আপনার প্রথম টেলিগ্রাম মিনি অ্যাপ।', button: 'কাজ শুরু করুন', alert: 'আপনি বাটনে ক্লিক করেছেন!' },
-            'en': { title: 'Welcome!', description: 'This is your first Telegram Mini App.', button: 'Start Working', alert: 'You clicked the button!' }
-        };
-
-        function changeLanguage() {
-            const lang = document.getElementById('langSelect').value;
-            document.getElementById('title').innerText = translations[lang].title;
-            document.getElementById('description').innerText = translations[lang].description;
-            document.getElementById('mainButton').innerText = translations[lang].button;
-        }
-
-        function buttonAction() {
-            const lang = document.getElementById('langSelect').value;
-            tg.showAlert(translations[lang].alert);
-        }
-    </script>
+    <div class="card">
+        <div class="card-info">
+            <div class="emoji">⭐</div>
+            <div class="details">
+                <h3>Star Giveaway</h3>
+                <p>Add stars to the pool</p>
+            </div>
+        </div>
+        <button class="go-btn">Go</button>
+    </div>
 </body>
 </html>
