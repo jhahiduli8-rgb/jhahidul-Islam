@@ -1,155 +1,115 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Easy Earning App</title>
-<style>
-body {
-background-color: #FDF9EA;
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.header {
-width: 100%;
-max-width: 400px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
-padding: 15px;
-border-radius: 0 0 20px 20px;
-background-color: #00008B;
-color: #fff;
-}
-.profile-card {
-background-color: rgba(255, 255, 255, 0.2);
-border-radius: 15px;
-padding: 15px;
-width: 100%;
-max-width: 400px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
-color: #000;
-font-weight: bold;
-}
-.profile-card p {
-margin: 0;
-}
-@keyframes pulse {
-0% { transform: scale(1); }
-50% { transform: scale(1.08); }
-100% { transform: scale(1); }
-}
-.verify-btn {
-background-color: #008000;
-border: none;
-padding: 10px 20px;
-border-radius: 8px;
-color: #fff;
-font-weight: bold;
-cursor: pointer;
-animation: pulse 2s infinite;
-}
-.section-title {
-width: 100%;
-max-width: 400px;
-font-size: 18px;
-font-weight: bold;
-margin-bottom: 15px;
-color: #333;
-}
-.grid-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 15px;
-width: 100%;
-max-width: 400px;
-margin-bottom: 20px;
-}
-.grid-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-color: #333;
-font-size: 14px;
-}
-.icon-box {
-width: 50px;
-height: 50px;
-border-radius: 10px;
-border: 1px solid #ddd;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 8px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-font-size: 24px;
-}
-.btn-gradient-blue { background: linear-gradient(135deg, #FF99AA, #FFCCAA); }
-.btn-gradient-green { background: linear-gradient(135deg, #99FF99, #CCFF99); }
-.btn-gradient-yellow { background: linear-gradient(135deg, #FFFF99, #FFFFCC); }
-.btn-gradient-purple { background: linear-gradient(135deg, #CC99FF, #FFCCFF); }
-.btn-gradient-orange { background: linear-gradient(135deg, #FFCC99, #FF9966); }
-.btn-gradient-teal { background: linear-gradient(135deg, #99FFFF, #CCFFFF); }
-.btn-gradient-pink { background: linear-gradient(135deg, #FF99FF, #FF66FF); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Earning App</title>
+    <style>
+        body {
+            background-color: #FAFAF7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-card {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
+            border: 1px solid #EAEAEA;
+        }
+        .profile-content {
+            display: flex;
+            align-items: center;
+        }
+        .badge {
+            width: 50px;
+            height: 50px;
+            background-color: #E6F4EA;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 15px;
+            color: #4CAF50;
+        }
+        .profile-text h3 {
+            margin: 0 0 5px 0;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        .profile-text p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .verify-btn {
+            background-color: #F8B425;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .notice-box {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(244, 67, 54, 0.15);
+            border: 1px solid #EAEAEA;
+        }
+        .notice-header {
+            display: flex;
+            align-items: center;
+            color: #F44336;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .notice-header span {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        .notice-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
-<div class="header">
-<h2>☰ Easy Earning</h2>
-<span>🔔</span>
-</div>
-<div class="profile-card">
-<div>
-<p>Hi. Rdx Noyon</p>
-<p>Welcome</p>
-<p>Agent Agreement Notice</p>
-</div>
-<button class="verify-btn">Verify Account</button>
-</div>
-<div class="section-title">Easy Earning</div>
-<div class="grid-container">
-<div class="grid-item">
-<div class="icon-box btn-gradient-blue">Ads</div>
-<span>Ads</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-green">?</div>
-<span>Quiz</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-yellow">⌨</div>
-<span>Typing</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-purple">📊</div>
-<span>Marketing</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-orange">💼</div>
-<span>Micro Job</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-teal">📝</div>
-<span>Job Post</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-pink">📚</div>
-<span>Courses</span>
-</div>
-<div class="grid-item">
-<div class="icon-box btn-gradient-blue">🌐</div>
-<span>Digital Service</span>
-</div>
-</div>
+    <div class="profile-card">
+        <div class="profile-content">
+            <div class="badge">✔</div>
+            <div class="profile-text">
+                <h3>Profile Verification</h3>
+                <p>Verify your profile now.</p>
+            </div>
+        </div>
+        <button class="verify-btn">Verify Account</button>
+    </div>
+
+    <div class="notice-box">
+        <div class="notice-header">
+            <span>🚨</span> Urgent notice
+        </div>
+        <div class="notice-text">
+            Do not pay anyone outside the app for verification. To verify, use only the in-app payment system.
+        </div>
+    </div>
 </body>
 </html>
-
