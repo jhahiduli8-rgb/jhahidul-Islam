@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Good App</title>
+    <title>Life Good</title>
     <style>
         body {
-            background-color: #f7f7f7;
+            background-color: #ffffff;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-bottom: 60px;
+            padding-bottom: 70px;
         }
 
         .header {
@@ -21,52 +21,57 @@
             color: #333;
         }
 
-        .header h2 {
-            margin: 0;
-        }
+        .header h2 { margin: 0; }
 
         .content {
             padding: 15px;
         }
 
-        .card {
-            background-color: #ffffff;
+        .verify-card {
+            background-color: #fff8e1;
             border-radius: 15px;
             padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ffeeba;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 10px;
             color: #333;
         }
 
-        .grid {
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-         .grid-item {
+        .grid-item {
             text-align: center;
-            background-color: #f0f4f8;
-            padding: 10px;
-             border-radius: 10px;
         }
 
-        .grid-item img {
-            width: 30px;
-            height: 30px;
-             margin-bottom: 5px;
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 5px;
+            font-size: 24px;
         }
 
         .grid-item span {
             display: block;
             font-size: 12px;
-            color: #333;
+            color: #555;
             font-weight: bold;
         }
 
@@ -84,24 +89,12 @@
         .nav-item {
             text-align: center;
             font-size: 12px;
-            color: #888;
-             cursor: pointer;
+            color: #555;
+            cursor: pointer;
         }
 
-         .nav-item.active {
+        .nav-item.active {
             color: #ffc107;
-        }
-
-         .nav-item img {
-             width: 24px;
-             height: 24px;
-             display: block;
-             margin: 0 auto;
-         }
-
-        .verify-box {
-            background-color: #fff8e1;
-             border-left: 5px solid #ffc107;
         }
     </style>
 </head>
@@ -113,46 +106,66 @@
     </div>
 
     <div class="content">
-        <div class="card verify-box">
-            <div class="section-title">Profile Verification</div>
-            <p>Verify your profile now.</p>
-            <button style="background-color: #ffc107; border: none; padding: 10px; border-radius: 5px; width: 100%; font-weight: bold;">Verify Account</button>
+        <div class="verify-card">
+            <div>
+                <div class="section-title">Profile Verification</div>
+                <p>Verify your profile now.</p>
+            </div>
+            <button style="background-color: #ffc107; border: none; padding: 10px 15px; border-radius: 8px; font-weight: bold;">Verify Account</button>
         </div>
 
-        <div class="card">
-            <div class="section-title">Easy Earning</div>
-            <div class="grid">
-                <div class="grid-item">
-                    <span>Ads</span>
-                </div>
-                <div class="grid-item">
-                    <span>Quiz</span>
-                </div>
-                 <div class="grid-item">
-                    <span>Typing</span>
-                </div>
-                 <div class="grid-item">
-                    <span>Marketing</span>
-                </div>
+        <div class="section-title">Easy Earning</div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="icon-circle"> Ads</div>
+                <span>Ads</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Quiz</div>
+                <span>Quiz</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Typing</div>
+                <span>Typing</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Ads</div>
+                <span>Marketing</span>
+            </div>
+             <div class="grid-item">
+                <div class="icon-circle"> Job</div>
+                <span>Micro Job</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Post</div>
+                <span>Job Post</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Book</div>
+                <span>Courses</span>
+            </div>
+            <div class="grid-item">
+                 <div class="icon-circle"> Data</div>
+                <span>Digital Service</span>
             </div>
         </div>
     </div>
 
     <div class="nav-bar">
         <div class="nav-item active">
-             <span>Home</span>
+            <span>Home</span>
         </div>
         <div class="nav-item">
             <span>Reels</span>
         </div>
         <div class="nav-item">
-             <span>Reselling</span>
-        </div>
-         <div class="nav-item">
-             <span>Micro Job</span>
+            <span>Reselling</span>
         </div>
         <div class="nav-item">
-             <span>Profile</span>
+            <span>Micro Job</span>
+        </div>
+        <div class="nav-item">
+            <span>Profile</span>
         </div>
     </div>
 </body>
