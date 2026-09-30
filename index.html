@@ -3,217 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Earning App</title>
+    <title>Easy Life</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
-            background-color: #FAFAF7;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header {
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 0 0 20px 20px;
-            background-color: #00008B;
-            color: #fff;
-        }
-        .profile-card {
-            background-color: #FFFFFF;
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
-            border: 1px solid #EAEAEA;
-        }
-        .profile-content {
-            display: flex;
-            align-items: center;
-        }
-        .badge {
-            width: 50px;
-            height: 50px;
-            background-color: #E6F4EA;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            margin-right: 15px;
-            color: #4CAF50;
-        }
-        .profile-text h3 {
-            margin: 0 0 5px 0;
-            color: #4CAF50;
-            font-size: 18px;
-        }
-        .profile-text p {
-            margin: 0;
-            color: #666;
-            font-size: 14px;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-        .verify-btn {
-            background-color: #F8B425;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 8px;
-            color: #FFFFFF;
-            font-weight: bold;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-        }
-        .notice-box {
-            background-color: #FFFFFF;
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(244, 67, 54, 0.15);
-            border: 1px solid #EAEAEA;
-        }
-        .notice-header {
-            display: flex;
-            align-items: center;
-            color: #F44336;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .notice-header span {
-            margin-right: 8px;
-            font-size: 20px;
-        }
-        .notice-text {
-            color: #555;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        .section-title {
-            width: 100%;
-            max-width: 400px;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
+            background-color: #F8F9FA;
             color: #333;
         }
+
+        /* App Bar */
+        .app-bar {
+            background-color: #FFC107;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu-icon, .notification-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .notification-wrapper {
+            position: relative;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #FF5252;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 15px;
+        }
+
+        /* Section Header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        /* Grid Layout */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+
         .grid-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            color: #333;
-            font-size: 14px;
         }
+
         .icon-box {
-            width: 50px;
             height: 50px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
+            width: 50px;
+            border-radius: 12px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin-bottom: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            justify-content: center;
+            margin: 0 auto 8px auto;
             font-size: 24px;
         }
-        .btn-gradient-blue { background: linear-gradient(135deg, #FF99AA, #FFCCAA); }
-        .btn-gradient-green { background: linear-gradient(135deg, #99FF99, #CCFF99); }
-        .btn-gradient-yellow { background: linear-gradient(135deg, #FFFF99, #FFFFCC); }
-        .btn-gradient-purple { background: linear-gradient(135deg, #CC99FF, #FFCCFF); }
-        .btn-gradient-orange { background: linear-gradient(135deg, #FFCC99, #FF9966); }
-        .btn-gradient-teal { background: linear-gradient(135deg, #99FFFF, #CCFFFF); }
-        .btn-gradient-pink { background: linear-gradient(135deg, #FF99FF, #FF66FF); }
+
+        .item-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 28px;
+        }
+
+        /* Top Products (Horizontal Scroll) */
+        .products-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 10px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px;
+            min-width: 110px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .product-icon-box {
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+            background-color: #FFF8E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px auto;
+            color: #FFC107;
+        }
+
+        .product-name {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 12px;
+            color: #FF9800;
+        }
+
+        /* Profile Verification Container */
+        .profile-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: 15px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .verified-icon {
+            color: #4CAF50;
+            font-size: 32px;
+            margin-right: 10px;
+        }
+
+        .profile-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .profile-status {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .verify-btn {
+            background-color: #FFC107;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .notice-box {
+            background-color: #FFEBEE;
+            color: #D32F2F;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: start;
+            font-size: 11px;
+        }
+
+        .notice-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Post Section */
+        .post-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .post-input-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            background-color: #FFC107;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .post-input {
+            flex-grow: 1;
+            background-color: #F1F3F5;
+            border: none;
+            padding: 12px;
+            border-radius: 20px;
+            color: #777;
+        }
+
+        .image-upload-icon {
+            margin-left: 15px;
+            color: #4CAF50;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .nav-item.active {
+            color: #FFC107;
+        }
+
+        .nav-icon {
+            font-size: 24px;
+            margin-bottom: 2px;
+        }
+
+        /* Color Tints */
+        .bg-blue { background-color: #E3F2FD; color: #1E88E5; }
+        .bg-purple { background-color: #F3E5F5; color: #8E24AA; }
+        .bg-blue-dark { background-color: #E8EAF6; color: #3F51B5; }
+        .bg-red { background-color: #FFEBEE; color: #E53935; }
+        .bg-teal { background-color: #E0F2F1; color: #00897B; }
+        .bg-orange { background-color: #FFF3E0; color: #FB8C00; }
+        .bg-green { background-color: #E8F5E9; color: #4CAF50; }
+        .bg-cyan { background-color: #E0F7FA; color: #00ACC1; }
+        .bg-amber { background-color: #FFF8E1; color: #FFB300; }
+        .bg-purple-dark { background-color: #EDE7F6; color: #5E35B1; }
+        .bg-blue-grey { background-color: #ECEFF1; color: #546E7A; }
+        .bg-pink { background-color: #FCE4EC; color: #D81B60; }
+        .bg-black { background-color: #212121; color: #FAFAFA; }
+        .bg-indigo { background-color: #E8EAF6; color: #3949AB; }
+        .bg-brown { background-color: #EFEBE9; color: #6D4C41; }
+        .bg-deep-purple { background-color: #EDE7F6; color: #512DA8; }
+        .bg-amber-dark { background-color: #FFF0C2; color: #F57C00; }
     </style>
+    <!-- Icons Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h2>☰ Easy Earning</h2>
-        <span>🔔</span>
+
+    <!-- App Bar -->
+    <div class="app-bar">
+        <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        <div class="app-title">Easy Life</div>
+        <div class="notification-wrapper">
+            <i class="fa-solid fa-bell notification-icon"></i>
+            <span class="notification-badge">99+</span>
+        </div>
     </div>
 
-    <div class="profile-card">
-        <div class="profile-content">
-            <div class="badge">✔</div>
-            <div class="profile-text">
-                <h3>Profile Verification</h3>
-                <p>Hi. Rdx Noyon</p>
-                <p>Verify your profile now.</p>
-                <p>Agent Agreement Notice</p>
+    <div class="container">
+        <!-- 1. Top Products -->
+        <div class="products-scroll">
+            <div class="product-card">
+                <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="product-name">জাফরান সি...</div>
+                <div class="product-price">৳ 740</div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="product-name">Nose Hair Tr...</div>
+                <div class="product-price">৳ 545</div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="product-name">SAFFRON G...</div>
+                <div class="product-price">৳ 245</div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="product-name">Best Qualit...</div>
+                <div class="product-price">৳ 1420</div>
+            </div>
+             <div class="product-card">
+                <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="product-name">V380 ...</div>
+                <div class="product-price">৳ 1750</div>
             </div>
         </div>
-        <button class="verify-btn">Verify Account</button>
+
+        <!-- 2. Profile Verification -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <i class="fa-solid fa-circle-check verified-icon"></i>
+                    <div>
+                        <div class="profile-name">Profile Verification</div>
+                        <div class="profile-status">Verify your profile now.</div>
+                    </div>
+                </div>
+                <button class="verify-btn">Verify Account</button>
+            </div>
+            <div class="notice-box">
+                <i class="fa-solid fa-triangle-exclamation notice-icon"></i>
+                <div>
+                    <strong>Urgent notice</strong><br>
+                    Do not pay anyone outside the app for verification. To verify, use only the in-app payment system.
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Join All Groups -->
+        <div class="section-header">
+            <i class="fa-solid fa-user-group section-icon"></i> Join All Groups
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="icon-box bg-blue"><i class="fa-brands fa-telegram"></i></div>
+                <div class="item-name">Customer Group</div>
+            </div>
+            <div class="grid-item">
+                <div class="icon-box bg-purple"><i class="fa-solid fa-video"></i></div>
+                <div class="item-name">Meeting Group</div>
+            </div>
+            <div class="grid-item">
+                <div class="icon-box bg-blue-dark"><i class="fa-brands fa-facebook"></i></div>
+                <div class="item-name">Facebook</div>
+            </div>
+            <div class="grid-item">
+                <div class="icon-box bg-red"><i class="fa-brands fa-youtube"></i></div>
+                <div class="item-name">YouTube</div>
+            </div>
+        </div>
+
+        <!-- 4. Easy Earning -->
+        <div class="section-header">
+            <i class="fa-solid fa-rocket section-icon"></i> Easy Earning
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><div class="icon-box bg-blue-dark"><i class="fa-solid fa-ad"></i></div><div class="item-name">Ads</div></div>
+            <div class="grid-item"><div class="icon-box bg-orange"><i class="fa-solid fa-circle-question"></i></div><div class="item-name">Quiz</div></div>
+            <div class="grid-item"><div class="icon-box bg-green"><i class="fa-solid fa-keyboard"></i></div><div class="item-name">Typing</div></div>
+            <div class="grid-item"><div class="icon-box bg-teal"><i class="fa-solid fa-bullhorn"></i></div><div class="item-name">Marketing</div></div>
+            <div class="grid-item"><div class="icon-box bg-cyan"><i class="fa-solid fa-briefcase"></i></div><div class="item-name">Micro Job</div></div>
+            <div class="grid-item"><div class="icon-box bg-amber-dark"><i class="fa-solid fa-file-circle-plus"></i></div><div class="item-name">Job Post</div></div>
+            <div class="grid-item"><div class="icon-box bg-purple"><i class="fa-solid fa-school"></i></div><div class="item-name">Courses</div></div>
+            <div class="grid-item"><div class="icon-box bg-blue-grey"><i class="fa-solid fa-globe"></i></div><div class="item-name">Digital Service</div></div>
+        </div>
+
+        <!-- 5. Special Earnings -->
+        <div class="section-header">
+            <i class="fa-solid fa-star section-icon"></i> Special Earnings
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><div class="icon-box bg-red"><i class="fa-solid fa-envelope"></i></div><div class="item-name">Gmail Work</div></div>
+            <div class="grid-item"><div class="icon-box bg-pink"><i class="fa-solid fa-camera"></i></div><div class="item-name">Instagram Work</div></div>
+            <div class="grid-item"><div class="icon-box bg-green"><i class="fa-brands fa-whatsapp"></i></div><div class="item-name">WhatsApp Work</div></div>
+            <div class="grid-item"><div class="icon-box bg-blue"><i class="fa-solid fa-paper-plane"></i></div><div class="item-name">Telegram Work</div></div>
+            <div class="grid-item"><div class="icon-box bg-black"><i class="fa-brands fa-tiktok"></i></div><div class="item-name">TikTok Work</div></div>
+            <div class="grid-item"><div class="icon-box bg-indigo"><i class="fa-brands fa-facebook"></i></div><div class="item-name">Facebook Work</div></div>
+        </div>
+
+        <!-- 6. Target Bonus -->
+        <div class="section-header">
+            <i class="fa-solid fa-trophy section-icon"></i> Target Bonus
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><div class="icon-box bg-teal"><i class="fa-solid fa-calendar-day"></i></div><div class="item-name">Daily</div></div>
+            <div class="grid-item"><div class="icon-box bg-purple"><i class="fa-solid fa-calendar-week"></i></div><div class="item-name">Weekly</div></div>
+            <div class="grid-item"><div class="icon-box bg-orange"><i class="fa-solid fa-calendar-check"></i></div><div class="item-name">Monthly</div></div>
+            <div class="grid-item"><div class="icon-box bg-blue"><i class="fa-solid fa-infinity"></i></div><div class="item-name">Lifetime</div></div>
+            <div class="grid-item"><div class="icon-box bg-red"><i class="fa-solid fa-gift"></i></div><div class="item-name">Welcome Offer</div></div>
+            <div class="grid-item"><div class="icon-box bg-amber"><i class="fa-solid fa-star"></i></div><div class="item-name">Leadership Bonus</div></div>
+            <div class="grid-item"><div class="icon-box bg-brown"><i class="fa-solid fa-medal"></i></div><div class="item-name">Rank</div></div>
+            <div class="grid-item"><div class="icon-box bg-blue-grey"><i class="fa-solid fa-wallet"></i></div><div class="item-name">Monthly Salary System</div></div>
+        </div>
+
+        <!-- 7. Recharge & Reselling -->
+        <div class="section-header">
+            <i class="fa-solid fa-cart-shopping section-icon"></i> Recharge & Reselling
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><div class="icon-box bg-blue"><i class="fa-solid fa-mobile-screen-button"></i></div><div class="item-name">Recharge</div></div>
+            <div class="grid-item"><div class="icon-box bg-red"><i class="fa-solid fa-gift"></i></div><div class="item-name">Drive Offer</div></div>
+            <div class="grid-item"><div class="icon-box bg-orange"><i class="fa-solid fa-cart-flatbed"></i></div><div class="item-name">Reselling</div></div>
+            <div class="grid-item"><div class="icon-box bg-green"><i class="fa-solid fa-dollar-sign"></i></div><div class="item-name">Dollar Buy Sell</div></div>
+        </div>
+
+        <!-- 8. Other -->
+        <div class="section-header">
+            <i class="fa-solid fa-cubes section-icon"></i> Other
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><div class="icon-box bg-green"><i class="fa-solid fa-chart-line"></i></div><div class="item-name">Weekly Performance</div></div>
+            <div class="grid-item"><div class="icon-box bg-deep-purple"><i class="fa-solid fa-ranking-star"></i></div><div class="item-name">Leaderboard</div></div>
+            <div class="grid-item"><div class="icon-box bg-blue"><i class="fa-solid fa-user-plus"></i></div><div class="item-name">Referral Contest</div></div>
+            <div class="grid-item"><div class="icon-box bg-amber"><i class="fa-solid fa-ticket"></i></div><div class="item-name">Gift Code</div></div>
+        </div>
+
+        <!-- 9. What's on your mind? Post Section -->
+        <div class="post-card">
+            <div class="post-input-wrapper">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <input type="text" class="post-input" placeholder="What's on your mind?">
+                <i class="fa-solid fa-image image-upload-icon"></i>
+            </div>
+        </div>
+        <br><br><br>
     </div>
 
-    <div class="notice-box">
-        <div class="notice-header">
-            <span>🚨</span> Urgent notice
-        </div>
-        <div class="notice-text">
-            Do not pay anyone outside the app for verification. To verify, use only the in-app payment system.
-        </div>
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item active"><div class="nav-icon"><i class="fa-solid fa-house"></i></div>Home</div>
+        <div class="nav-item"><div class="nav-icon"><i class="fa-solid fa-photo-film"></i></div>Reels</div>
+        <div class="nav-item"><div class="nav-icon"><i class="fa-solid fa-cart-shopping"></i></div>Reselling</div>
+        <div class="nav-item"><div class="nav-icon"><i class="fa-solid fa-briefcase"></i></div>Micro Job</div>
+        <div class="nav-item"><div class="nav-icon"><i class="fa-solid fa-user"></i></div>Profile</div>
     </div>
 
-    <div class="section-title">Easy Earning</div>
-    <div class="grid-container">
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-blue">Ads</div>
-            <span>Ads</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-green">?</div>
-            <span>Quiz</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-yellow">⌨</div>
-            <span>Typing</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-purple">📊</div>
-            <span>Marketing</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-orange">💼</div>
-            <span>Micro Job</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-teal">📝</div>
-            <span>Job Post</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-pink">📚</div>
-            <span>Courses</span>
-        </div>
-        <div class="grid-item">
-            <div class="icon-box btn-gradient-blue">🌐</div>
-            <span>Digital Service</span>
-        </div>
-    </div>
 </body>
 </html>
