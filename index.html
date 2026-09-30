@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+    দুঃখিত, আগের বার কোডটি হয়তো অসম্পূর্ণ ছিল। এই নিন সম্পূর্ণ কোডটি আমি আবার দিচ্ছি, যাতে কোনো অংশ বাদ না পড়ে।
+
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Life</title>
@@ -21,13 +27,11 @@
             flex-direction: column;
         }
 
-        /* Click Animation */
         .clickable:active {
             transform: scale(0.95);
             transition: transform 0.1s ease;
         }
 
-        /* Full Height App Bar */
         .app-bar {
             background-color: #FFC107;
             padding-top: 40px; 
@@ -65,7 +69,6 @@
             border-radius: 50%;
         }
 
-        /* Rounded Content Area */
         .content-wrapper {
             background-color: #F8F9FA;
             border-top-left-radius: 30px;
@@ -76,7 +79,6 @@
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Section Header */
         .section-header {
             display: flex;
             align-items: center;
@@ -91,7 +93,6 @@
             font-size: 24px;
         }
 
-        /* Grid Layout */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -128,7 +129,6 @@
             height: 28px;
         }
 
-        /* Top Products (Horizontal Scroll) */
         .products-scroll {
             display: flex;
             overflow-x: auto;
@@ -168,7 +168,6 @@
             color: #FF9800;
         }
 
-        /* Profile Verification Container */
         .profile-card {
             background-color: white;
             padding: 15px;
@@ -204,7 +203,6 @@
             color: #777;
         }
 
-        /* Animated Verify Button */
         .verify-btn {
             background-color: #FFC107;
             border: none;
@@ -220,7 +218,6 @@
             background-color: #FFA000;
         }
 
-        /* Light Green Background for Notice Box */
         .notice-box {
             background-color: #E8F5E9; 
             color: #2E7D32; 
@@ -237,7 +234,6 @@
             font-size: 18px;
         }
 
-        /* Post Section */
         .post-card {
             background-color: white;
             padding: 15px;
@@ -280,7 +276,6 @@
             cursor: pointer;
         }
 
-        /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -309,30 +304,33 @@
             margin-bottom: 2px;
         }
 
-        /* Updated Icon Tints (Light Blue and Light Green) */
-        .bg-blue { background-color: #E3F2FD; color: #1565C0; }
-        .bg-purple { background-color: #E8F5E9; color: #2E7D32; } 
-        .bg-blue-dark { background-color: #E0F2F1; color: #00695C; } 
-        .bg-red { background-color: #E1F5FE; color: #0288D1; } 
-        .bg-teal { background-color: #E8F5E9; color: #388E3C; } 
-        .bg-orange { background-color: #E3F2FD; color: #1976D2; } 
-        .bg-green { background-color: #E0F2F1; color: #00897B; } 
-        .bg-cyan { background-color: #E8F5E9; color: #43A047; } 
-        .bg-amber { background-color: #FFF8E1; color: #FFB300; }
-        .bg-purple-dark { background-color: #E3F2FD; color: #0288D1; }
-        .bg-blue-grey { background-color: #E8F5E9; color: #2E7D32; }
-        .bg-pink { background-color: #E0F2F1; color: #00838F; }
-        .bg-black { background-color: #E3F2FD; color: #1565C0; }
-        .bg-indigo { background-color: #E8F5E9; color: #388E3C; }
-        .bg-brown { background-color: #EFEBE9; color: #6D4C41; }
-        .bg-deep-purple { background-color: #E3F2FD; color: #1565C0; }
-        .bg-amber-dark { background-color: #E0F2F1; color: #00695C; }
+        /* Tints matching icon colors */
+        .bg-telegram { background-color: #E3F2FD; color: #0288D1; }
+        .bg-video { background-color: #EDE7F6; color: #512DA8; }
+        .bg-facebook { background-color: #E8EAF6; color: #3F51B5; }
+        .bg-youtube { background-color: #FFEBEE; color: #D32F2F; }
+        .bg-ad { background-color: #E1F5FE; color: #039BE5; }
+        .bg-quiz { background-color: #FFF8E1; color: #FBC02D; }
+        .bg-typing { background-color: #E8F5E9; color: #388E3C; }
+        .bg-marketing { background-color: #E0F2F1; color: #00897B; }
+        .bg-microjob { background-color: #E8F5E9; color: #4CAF50; }
+        .bg-jobpost { background-color: #FFF8E1; color: #FFA000; }
+        .bg-courses { background-color: #F3E5F5; color: #8E24AA; }
+        .bg-digitalservice { background-color: #E0F7FA; color: #00ACC1; }
+        .bg-gmail { background-color: #FFEBEE; color: #F44336; }
+        .bg-instagram { background-color: #FCE4EC; color: #E91E63; }
+        .bg-whatsapp { background-color: #E8F5E9; color: #25D366; }
+        .bg-tiktok { background-color: #FAFAFA; color: #000000; }
+        .bg-calendar { background-color: #E0F2F1; color: #00796B; }
+        .bg-trophy { background-color: #FFF3E0; color: #F57C00; }
+        .bg-wallet { background-color: #E8F5E9; color: #388E3C; }
+        .bg-performance { background-color: #E8F5E9; color: #4CAF50; }
+        .bg-leaderboard { background-color: #EDE7F6; color: #7B1FA2; }
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
 </head>
 <body>
 
-    <!-- App Bar -->
     <div class="app-bar">
         <div class="menu-icon clickable"><i class="fa-solid fa-bars"></i></div>
         <div class="app-title">Easy Life</div>
@@ -342,9 +340,7 @@
         </div>
     </div>
 
-    <!-- Rounded Content Area -->
     <div class="content-wrapper">
-        <!-- 1. Top Products -->
         <div class="products-scroll">
             <div class="product-card clickable">
                 <div class="product-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
@@ -373,7 +369,6 @@
             </div>
         </div>
 
-        <!-- 2. Profile Verification -->
         <div class="profile-card">
             <div class="profile-header">
                 <div class="profile-info">
@@ -394,95 +389,88 @@
             </div>
         </div>
 
-        <!-- 3. Join All Groups -->
         <div class="section-header">
             <i class="fa-solid fa-user-group section-icon"></i> Join All Groups
         </div>
         <div class="grid-container">
             <div class="grid-item clickable">
-                <div class="icon-box bg-blue"><i class="fa-brands fa-telegram"></i></div>
+                <div class="icon-box bg-telegram"><i class="fa-brands fa-telegram"></i></div>
                 <div class="item-name">Customer Group</div>
             </div>
             <div class="grid-item clickable">
-                <div class="icon-box bg-purple"><i class="fa-solid fa-video"></i></div>
+                <div class="icon-box bg-video"><i class="fa-solid fa-video"></i></div>
                 <div class="item-name">Meeting Group</div>
             </div>
             <div class="grid-item clickable">
-                <div class="icon-box bg-blue-dark"><i class="fa-brands fa-facebook"></i></div>
+                <div class="icon-box bg-facebook"><i class="fa-brands fa-facebook"></i></div>
                 <div class="item-name">Facebook</div>
             </div>
             <div class="grid-item clickable">
-                <div class="icon-box bg-red"><i class="fa-brands fa-youtube"></i></div>
+                <div class="icon-box bg-youtube"><i class="fa-brands fa-youtube"></i></div>
                 <div class="item-name">YouTube</div>
             </div>
         </div>
 
-        <!-- 4. Easy Earning -->
         <div class="section-header">
             <i class="fa-solid fa-rocket section-icon"></i> Easy Earning
         </div>
         <div class="grid-container">
-            <div class="grid-item clickable"><div class="icon-box bg-blue-dark"><i class="fa-solid fa-ad"></i></div><div class="item-name">Ads</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-orange"><i class="fa-solid fa-circle-question"></i></div><div class="item-name">Quiz</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-green"><i class="fa-solid fa-keyboard"></i></div><div class="item-name">Typing</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-teal"><i class="fa-solid fa-bullhorn"></i></div><div class="item-name">Marketing</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-cyan"><i class="fa-solid fa-briefcase"></i></div><div class="item-name">Micro Job</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-amber-dark"><i class="fa-solid fa-file-circle-plus"></i></div><div class="item-name">Job Post</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-purple"><i class="fa-solid fa-school"></i></div><div class="item-name">Courses</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-blue-grey"><i class="fa-solid fa-globe"></i></div><div class="item-name">Digital Service</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-ad"><i class="fa-solid fa-ad"></i></div><div class="item-name">Ads</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-quiz"><i class="fa-solid fa-circle-question"></i></div><div class="item-name">Quiz</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-typing"><i class="fa-solid fa-keyboard"></i></div><div class="item-name">Typing</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-marketing"><i class="fa-solid fa-bullhorn"></i></div><div class="item-name">Marketing</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-microjob"><i class="fa-solid fa-briefcase"></i></div><div class="item-name">Micro Job</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-jobpost"><i class="fa-solid fa-file-circle-plus"></i></div><div class="item-name">Job Post</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-courses"><i class="fa-solid fa-school"></i></div><div class="item-name">Courses</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-digitalservice"><i class="fa-solid fa-globe"></i></div><div class="item-name">Digital Service</div></div>
         </div>
 
-        <!-- 5. Special Earnings -->
         <div class="section-header">
             <i class="fa-solid fa-star section-icon"></i> Special Earnings
         </div>
         <div class="grid-container">
-            <div class="grid-item clickable"><div class="icon-box bg-red"><i class="fa-solid fa-envelope"></i></div><div class="item-name">Gmail Work</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-pink"><i class="fa-solid fa-camera"></i></div><div class="item-name">Instagram Work</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-green"><i class="fa-brands fa-whatsapp"></i></div><div class="item-name">WhatsApp Work</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-blue"><i class="fa-solid fa-paper-plane"></i></div><div class="item-name">Telegram Work</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-black"><i class="fa-brands fa-tiktok"></i></div><div class="item-name">TikTok Work</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-indigo"><i class="fa-brands fa-facebook"></i></div><div class="item-name">Facebook Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-gmail"><i class="fa-solid fa-envelope"></i></div><div class="item-name">Gmail Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-instagram"><i class="fa-solid fa-camera"></i></div><div class="item-name">Instagram Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-whatsapp"><i class="fa-brands fa-whatsapp"></i></div><div class="item-name">WhatsApp Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-telegram"><i class="fa-solid fa-paper-plane"></i></div><div class="item-name">Telegram Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-tiktok"><i class="fa-brands fa-tiktok"></i></div><div class="item-name">TikTok Work</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-facebook"><i class="fa-brands fa-facebook"></i></div><div class="item-name">Facebook Work</div></div>
         </div>
 
-        <!-- 6. Target Bonus -->
         <div class="section-header">
             <i class="fa-solid fa-trophy section-icon"></i> Target Bonus
         </div>
         <div class="grid-container">
-            <div class="grid-item clickable"><div class="icon-box bg-teal"><i class="fa-solid fa-calendar-day"></i></div><div class="item-name">Daily</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-purple"><i class="fa-solid fa-calendar-week"></i></div><div class="item-name">Weekly</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-orange"><i class="fa-solid fa-calendar-check"></i></div><div class="item-name">Monthly</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-blue"><i class="fa-solid fa-infinity"></i></div><div class="item-name">Lifetime</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-red"><i class="fa-solid fa-gift"></i></div><div class="item-name">Welcome Offer</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-amber"><i class="fa-solid fa-star"></i></div><div class="item-name">Leadership Bonus</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-brown"><i class="fa-solid fa-medal"></i></div><div class="item-name">Rank</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-blue-grey"><i class="fa-solid fa-wallet"></i></div><div class="item-name">Monthly Salary System</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-typing"><i class="fa-solid fa-calendar-day"></i></div><div class="item-name">Daily</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-courses"><i class="fa-solid fa-calendar-week"></i></div><div class="item-name">Weekly</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-quiz"><i class="fa-solid fa-calendar-check"></i></div><div class="item-name">Monthly</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-telegram"><i class="fa-solid fa-infinity"></i></div><div class="item-name">Lifetime</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-youtube"><i class="fa-solid fa-gift"></i></div><div class="item-name">Welcome Offer</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-quiz"><i class="fa-solid fa-star"></i></div><div class="item-name">Leadership Bonus</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-marketing"><i class="fa-solid fa-medal"></i></div><div class="item-name">Rank</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-facebook"><i class="fa-solid fa-wallet"></i></div><div class="item-name">Monthly Salary System</div></div>
         </div>
 
-        <!-- 7. Recharge & Reselling -->
         <div class="section-header">
             <i class="fa-solid fa-cart-shopping section-icon"></i> Recharge & Reselling
         </div>
         <div class="grid-container">
-            <div class="grid-item clickable"><div class="icon-box bg-blue"><i class="fa-solid fa-mobile-screen-button"></i></div><div class="item-name">Recharge</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-red"><i class="fa-solid fa-gift"></i></div><div class="item-name">Drive Offer</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-orange"><i class="fa-solid fa-flatbed"></i></div><div class="item-name">Reselling</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-green"><i class="fa-solid fa-dollar-sign"></i></div><div class="item-name">Dollar Buy Sell</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-telegram"><i class="fa-solid fa-mobile-screen-button"></i></div><div class="item-name">Recharge</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-youtube"><i class="fa-solid fa-gift"></i></div><div class="item-name">Drive Offer</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-video"><i class="fa-solid fa-cart-flatbed"></i></div><div class="item-name">Reselling</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-typing"><i class="fa-solid fa-dollar-sign"></i></div><div class="item-name">Dollar Buy Sell</div></div>
         </div>
 
-        <!-- 8. Other -->
         <div class="section-header">
             <i class="fa-solid fa-cubes section-icon"></i> Other
         </div>
         <div class="grid-container">
-            <div class="grid-item clickable"><div class="icon-box bg-green"><i class="fa-solid fa-chart-line"></i></div><div class="item-name">Weekly Performance</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-deep-purple"><i class="fa-solid fa-ranking-star"></i></div><div class="item-name">Leaderboard</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-blue"><i class="fa-solid fa-user-plus"></i></div><div class="item-name">Referral Contest</div></div>
-            <div class="grid-item clickable"><div class="icon-box bg-amber"><i class="fa-solid fa-ticket"></i></div><div class="item-name">Gift Code</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-typing"><i class="fa-solid fa-chart-line"></i></div><div class="item-name">Weekly Performance</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-courses"><i class="fa-solid fa-ranking-star"></i></div><div class="item-name">Leaderboard</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-telegram"><i class="fa-solid fa-user-plus"></i></div><div class="item-name">Referral Contest</div></div>
+            <div class="grid-item clickable"><div class="icon-box bg-quiz"><i class="fa-solid fa-ticket"></i></div><div class="item-name">Gift Code</div></div>
         </div>
 
-        <!-- 9. What's on your mind? Post Section -->
         <div class="post-card">
             <div class="post-input-wrapper">
                 <div class="avatar"><i class="fa-solid fa-user"></i></div>
@@ -493,7 +481,6 @@
         <br><br><br>
     </div>
 
-    <!-- Bottom Navigation -->
     <div class="bottom-nav">
         <div class="nav-item active clickable"><div class="nav-icon"><i class="fa-solid fa-house"></i></div>Home</div>
         <div class="nav-item clickable"><div class="nav-icon"><i class="fa-solid fa-photo-film"></i></div>Reels</div>
